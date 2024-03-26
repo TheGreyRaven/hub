@@ -3,11 +3,13 @@ import { Profile } from "../Profile";
 
 const SideMenu = () => {
   return (
-    <section className="h-full w-4/12 p-4 border-r-2">
+    <div className="p-4 border-r-2 h-full">
       <p className="text-2xl font-extrabold mb-4">Välkommen!</p>
       <Profile />
-      <Pages />
-    </section>
+      <div>
+        <Pages />
+      </div>
+    </div>
   );
 };
 

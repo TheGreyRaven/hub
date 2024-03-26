@@ -49,6 +49,11 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 @layer utilities {
 
   /* Hide scrollbar for Chrome, Safari and Opera */

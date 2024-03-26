@@ -1,18 +1,18 @@
+import { useShallow } from "zustand/react/shallow";
+
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Switch } from "@/components/ui/switch";
+import { useTheme } from "@/lib/theme-provider";
+import { useStore } from "@/lib/zustand";
 import {
   IconBackpack,
-  IconGraph,
   IconMoonFilled,
-  IconNews,
+  IconQuestionMark,
   IconShoppingCart,
   IconX,
 } from "@tabler/icons-react";
-import { Card } from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
-import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
-import { useStore } from "@/lib/zustand";
-import { useShallow } from "zustand/react/shallow";
-import { useTheme } from "@/lib/theme-provider";
 
 const Pages = () => {
   const { currentPage, setPage } = useStore(
@@ -26,64 +26,66 @@ const Pages = () => {
 
   return (
     <section className="mt-8">
-      <Card className="border-none mb-8 overflow-hidden">
-        <Button
-          variant="ghost"
-          className={`items-center p-2 m-0 w-full h-full rounded-none justify-normal font-normal hover:text-white
-                    ${currentPage === "news" && "text-white bg-settings_white_hover"}`}
-          onClick={() => setPage("news")}
-        >
-          <div className="h-fit w-fit bg-sky-700 rounded-md p-[2px] ml-2">
-            <IconNews color="white" />
-          </div>
+      <Card className="border-none mb-8">
+        <div className="rounded-xl overflow-hidden">
+          {/* <Button
+            variant="ghost"
+            className={`items-center p-2 m-0 w-full h-full rounded-none justify-normal font-normal hover:text-white
+                      ${currentPage === "news" && "text-white bg-settings_white_hover"}`}
+            onClick={() => setPage("news")}
+          >
+            <div className="h-fit w-fit bg-sky-700 rounded-md p-[2px] ml-2">
+              <IconNews color="white" />
+            </div>
 
-          <p className="text-md ml-2">Nyheter</p>
-        </Button>
+            <p className="text-md ml-2">Nyheter</p>
+          </Button>
 
-        <Separator />
+          <Separator /> */}
 
-        <Button
-          variant="ghost"
-          className={`items-center p-2 m-0 w-full h-full rounded-none justify-normal font-normal hover:text-white
-                    ${currentPage === "shop" && "text-white bg-settings_white_hover"}`}
-          onClick={() => setPage("shop")}
-        >
-          <div className="h-fit w-fit bg-green-700 rounded-md p-[2px] ml-2">
-            <IconShoppingCart color="white" />
-          </div>
+          <Button
+            variant="ghost"
+            className={`items-center p-2 m-0 w-full h-full rounded-none justify-normal font-normal hover:text-white
+                      ${currentPage === "shop" && "text-white bg-settings_white_hover"}`}
+            onClick={() => setPage("shop")}
+          >
+            <div className="h-fit w-fit bg-green-700 rounded-md p-[2px] ml-2">
+              <IconShoppingCart color="white" />
+            </div>
 
-          <p className="text-md ml-2">Shop</p>
-        </Button>
+            <p className="text-md ml-2">Shop</p>
+          </Button>
 
-        <Separator />
+          <Separator />
 
-        <Button
-          variant="ghost"
-          className={`items-center p-2 m-0 w-full h-full rounded-none justify-normal font-normal hover:text-white
-                    ${currentPage === "storage" && "text-white bg-settings_white_hover"}`}
-          onClick={() => setPage("storage")}
-        >
-          <div className="h-fit w-fit bg-amber-600 rounded-md p-[2px] ml-2">
-            <IconBackpack color="white" />
-          </div>
+          <Button
+            variant="ghost"
+            className={`items-center p-2 m-0 w-full h-full rounded-none justify-normal font-normal hover:text-white
+                      ${currentPage === "storage" && "text-white bg-settings_white_hover"}`}
+            onClick={() => setPage("storage")}
+          >
+            <div className="h-fit w-fit bg-amber-600 rounded-md p-[2px] ml-2">
+              <IconBackpack color="white" />
+            </div>
 
-          <p className="text-md ml-2">Förråd</p>
-        </Button>
+            <p className="text-md ml-2">Förråd</p>
+          </Button>
 
-        <Separator />
+          <Separator />
 
-        <Button
-          variant="ghost"
-          className={`items-center p-2 m-0 w-full h-full rounded-none justify-normal font-normal hover:text-white
-            ${currentPage === "stats" && "text-white bg-settings_white_hover"}`}
-          onClick={() => setPage("stats")}
-        >
-          <div className="h-fit w-fit bg-indigo-600 rounded-md p-[2px] ml-2">
-            <IconGraph color="white" />
-          </div>
+          <Button
+            variant="ghost"
+            className={`items-center p-2 m-0 w-full h-full rounded-none justify-normal font-normal hover:text-white
+              ${currentPage === "stats" && "text-white bg-settings_white_hover"}`}
+            onClick={() => setPage("stats")}
+          >
+            <div className="h-fit w-fit bg-indigo-600 rounded-md p-[2px] ml-2">
+              <IconQuestionMark color="white" />
+            </div>
 
-          <p className="text-md ml-2">Statistik</p>
-        </Button>
+            <p className="text-md ml-2">Info</p>
+          </Button>
+        </div>
       </Card>
 
       <Card className="border-none py-2 px-4">
@@ -102,17 +104,19 @@ const Pages = () => {
         </div>
       </Card>
 
-      <Card className="border-none overflow-hidden mt-8">
-        <Button
-          variant="ghost"
-          className={`items-center p-2 m-0 w-full h-full rounded-none justify-normal font-normal hover:text-white`}
-        >
-          <div className="h-fit w-fit bg-red-800 rounded-md p-[2px] ml-2">
-            <IconX color="white" />
-          </div>
+      <Card className="border-none mt-8">
+        <div className="rounded-xl overflow-hidden">
+          <Button
+            variant="ghost"
+            className={`items-center p-2 m-0 w-full h-full rounded-none justify-normal font-normal hover:text-white`}
+          >
+            <div className="h-fit w-fit bg-red-800 rounded-md p-[2px] ml-2">
+              <IconX color="white" />
+            </div>
 
-          <p className="text-md ml-2">Avsluta</p>
-        </Button>
+            <p className="text-md ml-2">Avsluta</p>
+          </Button>
+        </div>
       </Card>
     </section>
   );

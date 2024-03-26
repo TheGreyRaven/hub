@@ -1,9 +1,12 @@
-import { useStore } from "@/lib/zustand";
 import { useShallow } from "zustand/react/shallow";
-import { News } from "./news";
+
+import { useStore } from "@/lib/zustand";
+
+import { NotFound } from "./404";
+import { Info } from "./info";
+// import { News } from "./news";
 import { Shop } from "./shop";
 import { Storage } from "./storage";
-import { NotFound } from "./404";
 
 const PageContainer = () => {
   const { currentPage } = useStore(
@@ -11,14 +14,17 @@ const PageContainer = () => {
   );
 
   switch (currentPage) {
-    case "news":
-      return <News />;
+    // case "news":
+    //   return <News />;
 
     case "shop":
       return <Shop />;
 
     case "storage":
       return <Storage />;
+
+    case "stats":
+      return <Info />;
 
     default:
       return <NotFound />;

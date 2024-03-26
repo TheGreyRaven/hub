@@ -6,19 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationPrevious,
-  PaginationLink,
-  PaginationEllipsis,
-  PaginationNext,
-} from "@/components/ui/pagination";
 
 const News = () => {
   return (
-    <section className="relative h-full">
+    <section className="w-full">
       <div className="flex-row">
         <Card>
           <CardHeader>
@@ -28,7 +19,7 @@ const News = () => {
             <CardDescription>Publicerat: 2024-03-10 05:32</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-pretty truncate max-h-16 overflow-hidden">
+            <p className="text-pretty truncate max-h-16">
               Som Emiliano skrev förra veckan så är vi på gång upp igen. Vi har
               tagit tid på oss för att lansera servern och det är främst på
               grund av att vi har viljat utveckla servern utan press och stress.
@@ -127,33 +118,6 @@ const News = () => {
             <a className="text-sm underline">Läs mer</a>
           </CardFooter>
         </Card>
-      </div>
-
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-        <Pagination>
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious href="#" lang="se" />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#" isActive>
-                2
-              </PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">3</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationEllipsis />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext href="#" />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
       </div>
     </section>
   );
